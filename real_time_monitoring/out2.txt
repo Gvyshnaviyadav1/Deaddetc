@@ -1,0 +1,81 @@
+11250 execve("./threads", ["./threads"], 0x7ffffa212fa8 /* 48 vars */) = 0
+11250 brk(NULL)                         = 0x5bbeaa21a000
+11250 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x72204ce38000
+11250 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+11250 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+11250 fstat(3, {st_mode=S_IFREG|0644, st_size=70079, ...}) = 0
+11250 mmap(NULL, 70079, PROT_READ, MAP_PRIVATE, 3, 0) = 0x72204ce26000
+11250 close(3)                          = 0
+11250 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+11250 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0"..., 832) = 832
+11250 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+11250 fstat(3, {st_mode=S_IFREG|0755, st_size=2125328, ...}) = 0
+11250 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+11250 mmap(NULL, 2170256, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x72204cc00000
+11250 mmap(0x72204cc28000, 1605632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x72204cc28000
+11250 mmap(0x72204cdb0000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b0000) = 0x72204cdb0000
+11250 mmap(0x72204cdff000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1fe000) = 0x72204cdff000
+11250 mmap(0x72204ce05000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x72204ce05000
+11250 close(3)                          = 0
+11250 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x72204ce23000
+11250 arch_prctl(ARCH_SET_FS, 0x72204ce23740) = 0
+11250 set_tid_address(0x72204ce23a10)   = 11250
+11250 set_robust_list(0x72204ce23a20, 24) = 0
+11250 rseq(0x72204ce24060, 0x20, 0, 0x53053053) = 0
+11250 mprotect(0x72204cdff000, 16384, PROT_READ) = 0
+11250 mprotect(0x5bbe9d03a000, 4096, PROT_READ) = 0
+11250 mprotect(0x72204ce76000, 8192, PROT_READ) = 0
+11250 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+11250 munmap(0x72204ce26000, 70079)     = 0
+11250 fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+11250 getrandom("\xfa\xde\xb5\xa6\x89\x25\x15\x9b", 8, GRND_NONBLOCK) = 8
+11250 brk(NULL)                         = 0x5bbeaa21a000
+11250 brk(0x5bbeaa23b000)               = 0x5bbeaa23b000
+11250 write(1, "Starting threads...\n", 20) = 20
+11250 rt_sigaction(SIGRT_1, {sa_handler=0x72204cc99530, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x72204cc45330}, NULL, 8) = 0
+11250 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+11250 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x72204c3ff000
+11250 mprotect(0x72204c400000, 8388608, PROT_READ|PROT_WRITE) = 0
+11250 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+11250 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x72204cbff990, parent_tid=0x72204cbff990, exit_signal=0, stack=0x72204c3ff000, stack_size=0x7fff80, tls=0x72204cbff6c0} => {parent_tid=[11251]}, 88) = 11251
+11251 rseq(0x72204cbfffe0, 0x20, 0, 0x53053053 <unfinished ...>
+11250 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+11251 <... rseq resumed>)               = 0
+11250 <... rt_sigprocmask resumed>NULL, 8) = 0
+11251 set_robust_list(0x72204cbff9a0, 24 <unfinished ...>
+11250 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+11251 <... set_robust_list resumed>)    = 0
+11250 <... mmap resumed>)               = 0x72204bbfe000
+11251 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+11250 mprotect(0x72204bbff000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+11251 <... rt_sigprocmask resumed>NULL, 8) = 0
+11250 <... mprotect resumed>)           = 0
+11251 write(1, "Thread 1: Trying to lock Mutex 1"..., 36 <unfinished ...>
+11250 rt_sigprocmask(SIG_BLOCK, ~[],  <unfinished ...>
+11251 <... write resumed>)              = 36
+11250 <... rt_sigprocmask resumed>[], 8) = 0
+11251 write(1, "Thread 1: Locked Mutex 1. Waitin"..., 49 <unfinished ...>
+11250 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x72204c3fe990, parent_tid=0x72204c3fe990, exit_signal=0, stack=0x72204bbfe000, stack_size=0x7fff80, tls=0x72204c3fe6c0} <unfinished ...>
+11251 <... write resumed>)              = 49
+11250 <... clone3 resumed> => {parent_tid=[11252]}, 88) = 11252
+11250 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+11252 rseq(0x72204c3fefe0, 0x20, 0, 0x53053053) = 0
+11252 set_robust_list(0x72204c3fe9a0, 24) = 0
+11252 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+11251 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+11252 <... rt_sigprocmask resumed>NULL, 8) = 0
+11252 write(1, "Thread 2: Trying to lock Mutex 2"..., 36) = 36
+11252 write(1, "Thread 2: Locked Mutex 2. Waitin"..., 49) = 49
+11252 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+11250 <... rt_sigprocmask resumed>NULL, 8) = 0
+11250 write(1, "Main thread is sleeping for 10 s"..., 68) = 68
+11250 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=10, tv_nsec=0},  <unfinished ...>
+11251 <... clock_nanosleep resumed>0x72204cbfee70) = 0
+11251 write(1, "Thread 1: Trying to lock Mutex 2"..., 36) = 36
+11251 futex(0x5bbe9d03b080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+11252 <... clock_nanosleep resumed>0x72204c3fde70) = 0
+11252 write(1, "Thread 2: Trying to lock Mutex 1"..., 36) = 36
+11252 futex(0x5bbe9d03b040, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+11250 <... clock_nanosleep resumed>0x7ffd64e4ad80) = 0
+11250 write(1, "Main thread: Program is likely d"..., 65) = 65
+11250 futex(0x72204cbff990, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 11251, NULL, FUTEX_BITSET_MATCH_ANY

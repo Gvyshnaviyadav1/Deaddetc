@@ -1,0 +1,113 @@
+5505  execve("./nodeadlock", ["./nodeadlock"], 0x7ffc827e0b68 /* 48 vars */) = 0
+5505  brk(NULL)                         = 0x59cf785fb000
+5505  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f2cf3680000
+5505  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+5505  openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+5505  fstat(3, {st_mode=S_IFREG|0644, st_size=70079, ...}) = 0
+5505  mmap(NULL, 70079, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f2cf366e000
+5505  close(3)                          = 0
+5505  openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+5505  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0"..., 832) = 832
+5505  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+5505  fstat(3, {st_mode=S_IFREG|0755, st_size=2125328, ...}) = 0
+5505  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+5505  mmap(NULL, 2170256, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f2cf3400000
+5505  mmap(0x7f2cf3428000, 1605632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f2cf3428000
+5505  mmap(0x7f2cf35b0000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b0000) = 0x7f2cf35b0000
+5505  mmap(0x7f2cf35ff000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1fe000) = 0x7f2cf35ff000
+5505  mmap(0x7f2cf3605000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f2cf3605000
+5505  close(3)                          = 0
+5505  mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f2cf366b000
+5505  arch_prctl(ARCH_SET_FS, 0x7f2cf366b740) = 0
+5505  set_tid_address(0x7f2cf366ba10)   = 5505
+5505  set_robust_list(0x7f2cf366ba20, 24) = 0
+5505  rseq(0x7f2cf366c060, 0x20, 0, 0x53053053) = 0
+5505  mprotect(0x7f2cf35ff000, 16384, PROT_READ) = 0
+5505  mprotect(0x59cf41b73000, 4096, PROT_READ) = 0
+5505  mprotect(0x7f2cf36be000, 8192, PROT_READ) = 0
+5505  prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+5505  munmap(0x7f2cf366e000, 70079)     = 0
+5505  fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+5505  getrandom("\x9d\xcd\x18\xc7\x5f\x38\x61\x2e", 8, GRND_NONBLOCK) = 8
+5505  brk(NULL)                         = 0x59cf785fb000
+5505  brk(0x59cf7861c000)               = 0x59cf7861c000
+5505  write(1, "Starting threads. Both will foll"..., 60) = 60
+5505  rt_sigaction(SIGRT_1, {sa_handler=0x7f2cf3499530, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f2cf3445330}, NULL, 8) = 0
+5505  rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+5505  mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f2cf2bff000
+5505  mprotect(0x7f2cf2c00000, 8388608, PROT_READ|PROT_WRITE) = 0
+5505  rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+5505  clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f2cf33ff990, parent_tid=0x7f2cf33ff990, exit_signal=0, stack=0x7f2cf2bff000, stack_size=0x7fff80, tls=0x7f2cf33ff6c0} => {parent_tid=[5506]}, 88) = 5506
+5505  rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+5506  rseq(0x7f2cf33fffe0, 0x20, 0, 0x53053053 <unfinished ...>
+5505  <... rt_sigprocmask resumed>NULL, 8) = 0
+5505  mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+5506  <... rseq resumed>)               = 0
+5505  <... mmap resumed>)               = 0x7f2cf23fe000
+5506  set_robust_list(0x7f2cf33ff9a0, 24 <unfinished ...>
+5505  mprotect(0x7f2cf23ff000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+5506  <... set_robust_list resumed>)    = 0
+5505  <... mprotect resumed>)           = 0
+5506  rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+5505  rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+5506  <... rt_sigprocmask resumed>NULL, 8) = 0
+5505  clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f2cf2bfe990, parent_tid=0x7f2cf2bfe990, exit_signal=0, stack=0x7f2cf23fe000, stack_size=0x7fff80, tls=0x7f2cf2bfe6c0} <unfinished ...>
+5506  write(1, "Thread 1: Establishing lock orde"..., 47) = 47
+5507  rseq(0x7f2cf2bfefe0, 0x20, 0, 0x53053053) = 0
+5507  set_robust_list(0x7f2cf2bfe9a0, 24) = 0
+5507  rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+5507  futex(0x7f2cf3605710, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+5506  futex(0x7f2cf3605710, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+5507  <... futex resumed>)              = 0
+5506  <... futex resumed>)              = 1
+5507  write(1, "Thread 2: Establishing lock orde"..., 47) = 47
+5507  futex(0x7f2cf3605710, FUTEX_WAKE_PRIVATE, 1) = 0
+5507  write(1, "Thread 2: Trying to lock Mutex 1"..., 36) = 36
+5507  write(1, "Thread 2: Locked Mutex 1.\n", 26 <unfinished ...>
+5506  futex(0x7f2cf3605710, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+5507  <... write resumed>)              = 26
+5507  futex(0x7f2cf3605710, FUTEX_WAKE_PRIVATE, 1) = 0
+5507  clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0},  <unfinished ...>
+5506  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+5506  write(1, "Thread 1: Trying to lock Mutex 1"..., 36 <unfinished ...>
+5505  <... clone3 resumed> => {parent_tid=[5507]}, 88) = 5507
+5505  rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+5505  futex(0x7f2cf33ff990, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 5506, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+5506  <... write resumed>)              = 36
+5506  futex(0x7f2cf3605710, FUTEX_WAKE_PRIVATE, 1) = 0
+5506  futex(0x59cf41b74040, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+5507  <... clock_nanosleep resumed>0x7f2cf2bfde70) = 0
+5507  write(1, "Thread 2: Trying to lock Mutex 2"..., 36) = 36
+5507  write(1, "Thread 2: Locked Mutex 2. Critic"..., 52) = 52
+5507  write(1, "Thread 2: Executing critical sec"..., 52) = 52
+5507  clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=5, tv_nsec=0}, 0x7f2cf2bfde70) = 0
+5507  write(1, "Thread 2: Releasing Mutex 2.\n", 29) = 29
+5507  write(1, "Thread 2: Releasing Mutex 1.\n", 29) = 29
+5507  futex(0x59cf41b74040, FUTEX_WAKE_PRIVATE, 1) = 1
+5507  write(1, "Thread 2: Finished.\n", 20) = 20
+5507  rt_sigprocmask(SIG_BLOCK, ~[RT_1], NULL, 8) = 0
+5507  madvise(0x7f2cf23fe000, 8368128, MADV_DONTNEED) = 0
+5507  exit(0 <unfinished ...>
+5506  <... futex resumed>)              = 0
+5507  <... exit resumed>)               = ?
+5507  +++ exited with 0 +++
+5506  write(1, "Thread 1: Locked Mutex 1.\n", 26) = 26
+5506  clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, 0x7f2cf33fee70) = 0
+5506  write(1, "Thread 1: Trying to lock Mutex 2"..., 36) = 36
+5506  write(1, "Thread 1: Locked Mutex 2. Critic"..., 52) = 52
+5506  write(1, "Thread 1: Executing critical sec"..., 52) = 52
+5506  clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=5, tv_nsec=0}, 0x7f2cf33fee70) = 0
+5506  write(1, "Thread 1: Releasing Mutex 2.\n", 29) = 29
+5506  write(1, "Thread 1: Releasing Mutex 1.\n", 29) = 29
+5506  futex(0x59cf41b74040, FUTEX_WAKE_PRIVATE, 1) = 0
+5506  write(1, "Thread 1: Finished.\n", 20) = 20
+5506  rt_sigprocmask(SIG_BLOCK, ~[RT_1], NULL, 8) = 0
+5506  madvise(0x7f2cf2bff000, 8368128, MADV_DONTNEED) = 0
+5506  exit(0)                           = ?
+5505  <... futex resumed>)              = 0
+5506  +++ exited with 0 +++
+5505  write(1, "Main thread: Thread 1 has comple"..., 37) = 37
+5505  write(1, "Main thread: Thread 2 has comple"..., 37) = 37
+5505  write(1, "Program finished successfully an"..., 49) = 49
+5505  exit_group(0)                     = ?
+5505  +++ exited with 0 +++
